@@ -1,0 +1,5 @@
+# Preserve the validated frozen-model / XAI environment.
+-r requirements-nhanes-xai.txt
+streamlit==1.66.0
+# Streamlit requires Pillow <13; this affects image rendering, not the model.
+pillow==12.3.0

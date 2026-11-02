@@ -1,0 +1,140 @@
+{
+  "applicability_labels": {
+    "Interpret with caution": "Minor missingness or uncommon values, without stronger flags",
+    "Limited model applicability": "Reduced completeness, out-of-range values or unseen categories",
+    "Within development-data profile": "Complete; typical numeric and known categorical inputs"
+  },
+  "categorical_observed_values": {
+    "race_ethnicity": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      6.0,
+      7.0
+    ],
+    "sex": [
+      1.0,
+      2.0
+    ],
+    "smoking_status": [
+      0.0,
+      1.0,
+      2.0
+    ]
+  },
+  "completeness_categories": {
+    "Complete": [
+      10,
+      10
+    ],
+    "Minor missingness": [
+      8,
+      9
+    ],
+    "Reduced completeness": [
+      0,
+      7
+    ]
+  },
+  "core_features": [
+    "age",
+    "sex",
+    "race_ethnicity",
+    "bmi",
+    "waist_cm",
+    "mean_systolic_bp",
+    "mean_diastolic_bp",
+    "hdl_mg_dl",
+    "total_cholesterol_mg_dl",
+    "smoking_status"
+  ],
+  "disclaimer": "This indicator describes similarity to the model's development data. It is not a clinical confidence score and does not quantify the probability that the prediction is correct.",
+  "frozen_metadata_sha256": "57fa864c5e81d28120ab414f94b326d86977535a88c22e79f8ac474037be66d3",
+  "frozen_model_sha256": "fa2254598fc24d8c93bbf9cfe597aece0e1137f227098e58efe38bcf302a8528",
+  "method": {
+    "numpy_version": "2.5.3",
+    "quantile_method": "linear",
+    "typical": "p01 <= value <= p99",
+    "uncommon": "Within inclusive observed min/max, outside p01/p99",
+    "values": "Raw observed development values only; no imputation or model fitting",
+    "version": 1
+  },
+  "model_version": "nhanes_phase2_xgb_v1",
+  "numeric_statistics": {
+    "age": {
+      "count": 25580,
+      "max": 80.0,
+      "median": 49.0,
+      "min": 20.0,
+      "p01": 20.0,
+      "p05": 23.0,
+      "p95": 80.0,
+      "p99": 80.0
+    },
+    "bmi": {
+      "count": 23885,
+      "max": 92.3,
+      "median": 28.2,
+      "min": 13.4,
+      "p01": 17.9,
+      "p05": 20.1,
+      "p95": 42.9,
+      "p99": 52.6
+    },
+    "hdl_mg_dl": {
+      "count": 22696,
+      "max": 226.0,
+      "median": 51.0,
+      "min": 5.0,
+      "p01": 26.0,
+      "p05": 32.0,
+      "p95": 83.0,
+      "p99": 102.0
+    },
+    "mean_diastolic_bp": {
+      "count": 22802,
+      "max": 143.66666666666666,
+      "median": 71.33333333333333,
+      "min": 0.0,
+      "p01": 38.66666666666666,
+      "p05": 52.66666666666666,
+      "p95": 91.33333333333331,
+      "p99": 102.66666666666669
+    },
+    "mean_systolic_bp": {
+      "count": 22802,
+      "max": 234.66666666666663,
+      "median": 121.33333333333331,
+      "min": 64.66666666666667,
+      "p01": 92.0,
+      "p05": 99.33333333333331,
+      "p95": 159.33333333333334,
+      "p99": 180.66666666666663
+    },
+    "total_cholesterol_mg_dl": {
+      "count": 22696,
+      "max": 813.0,
+      "median": 186.0,
+      "min": 59.0,
+      "p01": 107.0,
+      "p05": 128.0,
+      "p95": 260.0,
+      "p99": 301.0499999999993
+    },
+    "waist_cm": {
+      "count": 22792,
+      "max": 178.0,
+      "median": 98.2,
+      "min": 55.5,
+      "p01": 69.091,
+      "p05": 75.0,
+      "p95": 130.0,
+      "p99": 146.80900000000003
+    }
+  },
+  "reference_version": "nhanes_input_reference_v1",
+  "scope": "Project-defined interface labels; post-hoc engineering, not validated uncertainty",
+  "source_cohort_sha256": "f75e4db96bc672ea0f0f6b1913c484d4af56a9f0386541fca07cd22b5e4e15d9",
+  "source_development_path": "C:\\Users\\shaur\\diabetes_cdss_v02\\data\\processed\\nhanes\\nhanes_development_2011_2020.csv"
+}

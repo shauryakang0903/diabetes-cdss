@@ -1,0 +1,1602 @@
+{
+  "description": "Synthetic outputs captured before the input-quality layer",
+  "artifact_sha256": "fa2254598fc24d8c93bbf9cfe597aece0e1137f227098e58efe38bcf302a8528",
+  "metadata_sha256": "57fa864c5e81d28120ab414f94b326d86977535a88c22e79f8ac474037be66d3",
+  "scenarios": {
+    "relatively_lower_scoring_example": {
+      "patient": {
+        "age": 25,
+        "sex": 2,
+        "race_ethnicity": 3,
+        "bmi": 22,
+        "waist_cm": 78,
+        "mean_systolic_bp": 112,
+        "mean_diastolic_bp": 72,
+        "hdl_mg_dl": 65,
+        "total_cholesterol_mg_dl": 190,
+        "smoking_status": 0
+      },
+      "result": {
+        "model_version": "nhanes_phase2_xgb_v1",
+        "predicted_probability": 0.005870712921023369,
+        "predicted_probability_percent": 0.5870712921023369,
+        "default_classification": 0,
+        "default_classification_context": "Technical reference at 0.5 only; not a diagnosis.",
+        "reference_interpretation": "Below both sensitivity-oriented development-derived screening references.",
+        "thresholds": {
+          "default": {
+            "threshold": 0.5,
+            "at_or_above": false
+          },
+          "sensitivity_80_reference": {
+            "threshold": 0.14026810228824615,
+            "at_or_above": false
+          },
+          "sensitivity_90_reference": {
+            "threshold": 0.08646801114082336,
+            "at_or_above": false
+          },
+          "youden_reference": {
+            "threshold": 0.12872706353664398,
+            "at_or_above": false
+          }
+        },
+        "top_increasing_contributors": [
+          {
+            "feature": "sex",
+            "original_value": 2.0,
+            "was_missing": false,
+            "shap_contribution": 0.027949306182563305,
+            "absolute_shap_magnitude": 0.027949306182563305,
+            "direction": "increases_model_score"
+          }
+        ],
+        "top_decreasing_contributors": [
+          {
+            "feature": "age",
+            "original_value": 25.0,
+            "was_missing": false,
+            "shap_contribution": -1.6261156797409058,
+            "absolute_shap_magnitude": 1.6261156797409058,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 78.0,
+            "was_missing": false,
+            "shap_contribution": -0.8274046778678894,
+            "absolute_shap_magnitude": 0.8274046778678894,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": 65.0,
+            "was_missing": false,
+            "shap_contribution": -0.24715468287467957,
+            "absolute_shap_magnitude": 0.24715468287467957,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "all_feature_contributions": [
+          {
+            "feature": "age",
+            "original_value": 25.0,
+            "was_missing": false,
+            "shap_contribution": -1.6261156797409058,
+            "absolute_shap_magnitude": 1.6261156797409058,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 78.0,
+            "was_missing": false,
+            "shap_contribution": -0.8274046778678894,
+            "absolute_shap_magnitude": 0.8274046778678894,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": 65.0,
+            "was_missing": false,
+            "shap_contribution": -0.24715468287467957,
+            "absolute_shap_magnitude": 0.24715468287467957,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.22823122120462358,
+            "absolute_shap_magnitude": 0.22823122120462358,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_systolic_bp",
+            "original_value": 112.0,
+            "was_missing": false,
+            "shap_contribution": -0.14552608132362366,
+            "absolute_shap_magnitude": 0.14552608132362366,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "bmi",
+            "original_value": 22.0,
+            "was_missing": false,
+            "shap_contribution": -0.13453365862369537,
+            "absolute_shap_magnitude": 0.13453365862369537,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "total_cholesterol_mg_dl",
+            "original_value": 190.0,
+            "was_missing": false,
+            "shap_contribution": -0.11864558607339859,
+            "absolute_shap_magnitude": 0.11864558607339859,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 72.0,
+            "was_missing": false,
+            "shap_contribution": -0.03735337406396866,
+            "absolute_shap_magnitude": 0.03735337406396866,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "sex",
+            "original_value": 2.0,
+            "was_missing": false,
+            "shap_contribution": 0.027949306182563305,
+            "absolute_shap_magnitude": 0.027949306182563305,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 0.0,
+            "was_missing": false,
+            "shap_contribution": -0.004323397792177275,
+            "absolute_shap_magnitude": 0.004323397792177275,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "explanation_integrity": {
+          "scale": "raw_margin_log_odds",
+          "base_margin": -1.7905526161193848,
+          "raw_margin": -5.131891250610352,
+          "reconstructed_margin": -5.131891669501783,
+          "transformed_shap_total": -3.3413390533823986,
+          "core10_shap_total": -3.3413390533823986,
+          "transformed_feature_count": 18,
+          "original_feature_count": 10,
+          "margin_additivity": {
+            "maximum_absolute_error": 4.188914317637682e-07,
+            "mean_absolute_error": 4.188914317637682e-07,
+            "absolute_tolerance": 0.0001,
+            "relative_tolerance": 1e-05,
+            "passed": true
+          },
+          "reconstructed_probability": 0.005870710108494831,
+          "probability_absolute_error": 2.812528538190251e-09,
+          "probability_absolute_tolerance": 1e-06,
+          "probability_relative_tolerance": 1e-05,
+          "probability_check_passed": true,
+          "direction_tolerance": 1e-10
+        },
+        "limitations": [
+          "This is model-based decision support, not a diagnosis of diabetes.",
+          "Thresholds are development-derived operating references, not clinically validated clinical cutoffs.",
+          "SHAP explains model behavior, not causation; contributions are log-odds, not probability changes.",
+          "Incomplete inputs may reduce robustness: completed temporal validation showed lower performance among participants with missing Core-10 predictors.",
+          "The target is physician-diagnosed diabetes (DIQ010), not prospective diabetes incidence; intended population is adults."
+        ],
+        "model_derived_risk": {
+          "level": "LOW",
+          "label": "LOW model-derived risk",
+          "lower_boundary": null,
+          "upper_boundary": 0.08646801114082336,
+          "lower_inclusive": false,
+          "upper_inclusive": false,
+          "basis": "Project-defined interpretation of frozen sensitivity-oriented development operating references; not incident diabetes risk.",
+          "boundary_source": "models/nhanes/phase2_xgboost_metadata.json:reference_thresholds",
+          "references": {
+            "sensitivity_90_reference": 0.08646801114082336,
+            "sensitivity_80_reference": 0.14026810228824615
+          },
+          "disclaimer": "Low, Moderate, and High are model-derived decision-support strata based on development operating references. They are not diagnostic categories or clinically validated risk thresholds."
+        },
+        "recommendations": {
+          "clinical_follow_up": [
+            {
+              "rule_id": "REC_FOLLOWUP_LOW_001",
+              "section": "clinical_follow_up",
+              "trigger": {
+                "kind": "stratum",
+                "levels": [
+                  "LOW"
+                ]
+              },
+              "trigger_description": "Model-derived stratum is LOW",
+              "text": "Continue routine preventive care. Discuss diabetes screening according to your age, history, previous results and clinician advice; a LOW model-derived result does not rule out diabetes.",
+              "rationale": "Avoid false reassurance or suppression of clinically indicated screening",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification",
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "ADA2026_2",
+                "PROJECT_WORKFLOW"
+              ]
+            },
+            {
+              "rule_id": "REC_SYMPTOMS_001",
+              "section": "clinical_follow_up",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment, regardless of stratum",
+              "text": "Seek clinical assessment if symptoms such as increased thirst, frequent urination or unexplained weight loss develop, or if other health concerns arise, regardless of the model result.",
+              "rationale": "Symptoms and concerns override reassurance from a classification score",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification"
+              ],
+              "source_ids": [
+                "ADA2026_2"
+              ]
+            }
+          ],
+          "monitoring": [
+            {
+              "rule_id": "REC_MONITOR_LOW_001",
+              "section": "monitoring",
+              "trigger": {
+                "kind": "stratum",
+                "levels": [
+                  "LOW"
+                ]
+              },
+              "trigger_description": "Model-derived stratum is LOW",
+              "text": "Review weight, blood pressure and metabolic health during usual preventive visits; follow the monitoring schedule agreed with your clinician.",
+              "rationale": "Maintain routine cardiometabolic assessment",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification",
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "ADA2026_2",
+                "PROJECT_WORKFLOW"
+              ]
+            }
+          ],
+          "lifestyle": [
+            {
+              "rule_id": "REC_ACTIVITY_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Maintain or build regular physical activity suited to your abilities, preferences and medical circumstances; discuss suitable activity with your health professional when needed.",
+              "rationale": "General individualized activity support, without inferring activity level from the model",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 3: Prevention or Delay",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_3",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_NUTRITION_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Choose a balanced, nutrient-dense eating pattern that fits your preferences, resources and health needs. A qualified nutrition professional can help individualize it.",
+              "rationale": "General nutrition support without a prescribed diet or inferred dietary deficit",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 3: Prevention or Delay",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_3",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_TOBACCO_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Avoid tobacco and vaping, and maintain abstinence if you do not currently use them.",
+              "rationale": "General prevention advice; this does not assert current smoking",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_5"
+              ]
+            }
+          ],
+          "feature_aware": []
+        },
+        "recommendation_provenance": {
+          "framework_version": "nhanes_recommendations_v1",
+          "date": "2026-10-18",
+          "config_sha256": "00ad9faf8eaec49dacc53361d5ab757163dfb4365f6aa8edb759d5b24da1dd64",
+          "model_version": "nhanes_phase2_xgb_v1",
+          "guideline_informed": true,
+          "clinician_review_required": true,
+          "disclaimer": "Guideline-informed educational prompts require clinician interpretation; they do not diagnose disease, replace a treatment plan, or prescribe medication. Stratum-specific follow-up priority is a project workflow, not an ADA-endorsed probability cutoff.",
+          "triggered_rule_ids": [
+            "REC_FOLLOWUP_LOW_001",
+            "REC_SYMPTOMS_001",
+            "REC_MONITOR_LOW_001",
+            "REC_ACTIVITY_001",
+            "REC_NUTRITION_001",
+            "REC_TOBACCO_001"
+          ],
+          "input_policy": "Use observed original inputs only, never imputed values or SHAP signs. Adult measurement conventions apply only when observed age is at least 20. No race-specific actions."
+        }
+      }
+    },
+    "higher_scoring_example": {
+      "patient": {
+        "age": 68,
+        "sex": 1,
+        "race_ethnicity": 3,
+        "bmi": 35,
+        "waist_cm": 118,
+        "mean_systolic_bp": 145,
+        "mean_diastolic_bp": 78,
+        "hdl_mg_dl": 35,
+        "total_cholesterol_mg_dl": 150,
+        "smoking_status": 2
+      },
+      "result": {
+        "model_version": "nhanes_phase2_xgb_v1",
+        "predicted_probability": 0.5252653956413269,
+        "predicted_probability_percent": 52.52653956413269,
+        "default_classification": 1,
+        "default_classification_context": "Technical reference at 0.5 only; not a diagnosis.",
+        "reference_interpretation": "At or above both the 80%- and 90%-sensitivity development-derived screening references.",
+        "thresholds": {
+          "default": {
+            "threshold": 0.5,
+            "at_or_above": true
+          },
+          "sensitivity_80_reference": {
+            "threshold": 0.14026810228824615,
+            "at_or_above": true
+          },
+          "sensitivity_90_reference": {
+            "threshold": 0.08646801114082336,
+            "at_or_above": true
+          },
+          "youden_reference": {
+            "threshold": 0.12872706353664398,
+            "at_or_above": true
+          }
+        },
+        "top_increasing_contributors": [
+          {
+            "feature": "age",
+            "original_value": 68.0,
+            "was_missing": false,
+            "shap_contribution": 0.8232186436653137,
+            "absolute_shap_magnitude": 0.8232186436653137,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "total_cholesterol_mg_dl",
+            "original_value": 150.0,
+            "was_missing": false,
+            "shap_contribution": 0.4794929325580597,
+            "absolute_shap_magnitude": 0.4794929325580597,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 118.0,
+            "was_missing": false,
+            "shap_contribution": 0.3673514723777771,
+            "absolute_shap_magnitude": 0.3673514723777771,
+            "direction": "increases_model_score"
+          }
+        ],
+        "top_decreasing_contributors": [
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.20733408350497484,
+            "absolute_shap_magnitude": 0.20733408350497484,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 78.0,
+            "was_missing": false,
+            "shap_contribution": -0.1399342268705368,
+            "absolute_shap_magnitude": 0.1399342268705368,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 2.0,
+            "was_missing": false,
+            "shap_contribution": -0.049986134050413966,
+            "absolute_shap_magnitude": 0.049986134050413966,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "all_feature_contributions": [
+          {
+            "feature": "age",
+            "original_value": 68.0,
+            "was_missing": false,
+            "shap_contribution": 0.8232186436653137,
+            "absolute_shap_magnitude": 0.8232186436653137,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "total_cholesterol_mg_dl",
+            "original_value": 150.0,
+            "was_missing": false,
+            "shap_contribution": 0.4794929325580597,
+            "absolute_shap_magnitude": 0.4794929325580597,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 118.0,
+            "was_missing": false,
+            "shap_contribution": 0.3673514723777771,
+            "absolute_shap_magnitude": 0.3673514723777771,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": 35.0,
+            "was_missing": false,
+            "shap_contribution": 0.3028915226459503,
+            "absolute_shap_magnitude": 0.3028915226459503,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.20733408350497484,
+            "absolute_shap_magnitude": 0.20733408350497484,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "bmi",
+            "original_value": 35.0,
+            "was_missing": false,
+            "shap_contribution": 0.1736259162425995,
+            "absolute_shap_magnitude": 0.1736259162425995,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "mean_systolic_bp",
+            "original_value": 145.0,
+            "was_missing": false,
+            "shap_contribution": 0.17151771485805511,
+            "absolute_shap_magnitude": 0.17151771485805511,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 78.0,
+            "was_missing": false,
+            "shap_contribution": -0.1399342268705368,
+            "absolute_shap_magnitude": 0.1399342268705368,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 2.0,
+            "was_missing": false,
+            "shap_contribution": -0.049986134050413966,
+            "absolute_shap_magnitude": 0.049986134050413966,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "sex",
+            "original_value": 1.0,
+            "was_missing": false,
+            "shap_contribution": -0.02914385125041008,
+            "absolute_shap_magnitude": 0.02914385125041008,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "explanation_integrity": {
+          "scale": "raw_margin_log_odds",
+          "base_margin": -1.7905526161193848,
+          "raw_margin": 0.10114786028862,
+          "reconstructed_margin": 0.10114729055203497,
+          "transformed_shap_total": 1.8916999066714197,
+          "core10_shap_total": 1.8916999066714197,
+          "transformed_feature_count": 18,
+          "original_feature_count": 10,
+          "margin_additivity": {
+            "maximum_absolute_error": 5.69736585021019e-07,
+            "mean_absolute_error": 5.69736585021019e-07,
+            "absolute_tolerance": 0.0001,
+            "relative_tolerance": 1e-05,
+            "passed": true
+          },
+          "reconstructed_probability": 0.5252652860232526,
+          "probability_absolute_error": 1.0961807428433445e-07,
+          "probability_absolute_tolerance": 1e-06,
+          "probability_relative_tolerance": 1e-05,
+          "probability_check_passed": true,
+          "direction_tolerance": 1e-10
+        },
+        "limitations": [
+          "This is model-based decision support, not a diagnosis of diabetes.",
+          "Thresholds are development-derived operating references, not clinically validated clinical cutoffs.",
+          "SHAP explains model behavior, not causation; contributions are log-odds, not probability changes.",
+          "Incomplete inputs may reduce robustness: completed temporal validation showed lower performance among participants with missing Core-10 predictors.",
+          "The target is physician-diagnosed diabetes (DIQ010), not prospective diabetes incidence; intended population is adults."
+        ],
+        "model_derived_risk": {
+          "level": "HIGH",
+          "label": "HIGH model-derived risk",
+          "lower_boundary": 0.14026810228824615,
+          "upper_boundary": null,
+          "lower_inclusive": true,
+          "upper_inclusive": null,
+          "basis": "Project-defined interpretation of frozen sensitivity-oriented development operating references; not incident diabetes risk.",
+          "boundary_source": "models/nhanes/phase2_xgboost_metadata.json:reference_thresholds",
+          "references": {
+            "sensitivity_90_reference": 0.08646801114082336,
+            "sensitivity_80_reference": 0.14026810228824615
+          },
+          "disclaimer": "Low, Moderate, and High are model-derived decision-support strata based on development operating references. They are not diagnostic categories or clinically validated risk thresholds."
+        },
+        "recommendations": {
+          "clinical_follow_up": [
+            {
+              "rule_id": "REC_FOLLOWUP_HIGH_001",
+              "section": "clinical_follow_up",
+              "trigger": {
+                "kind": "stratum",
+                "levels": [
+                  "HIGH"
+                ]
+              },
+              "trigger_description": "Model-derived stratum is HIGH",
+              "text": "Arrange timely clinical review and discuss appropriate diagnostic laboratory testing. This model cannot establish diabetes. Symptoms, abnormal tests or important comorbidities may warrant clinician-directed referral; the clinician determines timing.",
+              "rationale": "Prioritize review without assigning a diagnosis or arbitrary deadline",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification",
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "ADA2026_2",
+                "PROJECT_WORKFLOW"
+              ]
+            },
+            {
+              "rule_id": "REC_SYMPTOMS_001",
+              "section": "clinical_follow_up",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment, regardless of stratum",
+              "text": "Seek clinical assessment if symptoms such as increased thirst, frequent urination or unexplained weight loss develop, or if other health concerns arise, regardless of the model result.",
+              "rationale": "Symptoms and concerns override reassurance from a classification score",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification"
+              ],
+              "source_ids": [
+                "ADA2026_2"
+              ]
+            }
+          ],
+          "monitoring": [
+            {
+              "rule_id": "REC_MONITOR_HIGH_001",
+              "section": "monitoring",
+              "trigger": {
+                "kind": "stratum",
+                "levels": [
+                  "HIGH"
+                ]
+              },
+              "trigger_description": "Model-derived stratum is HIGH",
+              "text": "Review previous glucose or HbA1c testing with your clinician, along with blood pressure, weight, waist and lipids. Glucose and HbA1c are not inputs to this model; monitoring depends on clinical assessment.",
+              "rationale": "Do not substitute nonglycemic model features for diagnostic assessment",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification",
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "ADA2026_2",
+                "PROJECT_WORKFLOW"
+              ]
+            }
+          ],
+          "lifestyle": [
+            {
+              "rule_id": "REC_ACTIVITY_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Maintain or build regular physical activity suited to your abilities, preferences and medical circumstances; discuss suitable activity with your health professional when needed.",
+              "rationale": "General individualized activity support, without inferring activity level from the model",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 3: Prevention or Delay",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_3",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_NUTRITION_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Choose a balanced, nutrient-dense eating pattern that fits your preferences, resources and health needs. A qualified nutrition professional can help individualize it.",
+              "rationale": "General nutrition support without a prescribed diet or inferred dietary deficit",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 3: Prevention or Delay",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_3",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_TOBACCO_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Avoid tobacco and vaping, and maintain abstinence if you do not currently use them.",
+              "rationale": "General prevention advice; this does not assert current smoking",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_5"
+              ]
+            }
+          ],
+          "feature_aware": [
+            {
+              "rule_id": "REC_WEIGHT_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "bmi_review",
+                "at_least": 25
+              },
+              "trigger_description": "Observed adult age >=20 and observed BMI >=25 kg/m\u00b2",
+              "text": "The entered BMI meets a conventional adult weight-review threshold. Consider discussing individualized weight-management support; BMI alone does not establish a disease or the right plan for you.",
+              "rationale": "Observed BMI supports a contextual weight discussion, not a treatment assignment",
+              "source_labels": [
+                "NIH/NIDDK: Health Tips for Adults",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "NIDDK_BODY",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_SMOKING_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "current_smoker",
+                "code": 2
+              },
+              "trigger_description": "Observed smoking_status is current smoker (code 2)",
+              "text": "You reported current smoking. Consider evidence-based smoking-cessation counseling or support through a qualified health professional. This prototype does not select medicines.",
+              "rationale": "Cessation support follows the reported smoking status, not its SHAP contribution",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_BP_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "bp_review",
+                "systolic_at_least": 120,
+                "diastolic_at_least": 80
+              },
+              "trigger_description": "Observed adult age >=20 and systolic >=120 OR diastolic >=80 mmHg",
+              "text": "An entered blood-pressure measurement may warrant review. Confirm measurement technique and discuss repeat assessment with a healthcare professional; these inputs do not diagnose hypertension.",
+              "rationale": "Use conventional elevated-BP review conventions without labeling a disease",
+              "source_labels": [
+                "2025 AHA/ACC multisociety blood-pressure guideline"
+              ],
+              "source_ids": [
+                "AHA2025_BP"
+              ]
+            },
+            {
+              "rule_id": "REC_WAIST_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "waist_review",
+                "above_cm_by_sex": {
+                  "1": 101.6,
+                  "2": 88.9
+                }
+              },
+              "trigger_description": "Observed adult age >=20; waist >101.6 cm for sex=1 or >88.9 cm for sex=2",
+              "text": "The entered waist measurement exceeds a conventional adult review threshold. Consider discussing central adiposity in your individual clinical context; these thresholds do not apply equally to every person or population.",
+              "rationale": "NIDDK >40/>35 inch conventions converted exactly using 2.54 cm/inch; no race-specific treatment",
+              "source_labels": [
+                "NIH/NIDDK: Health Tips for Adults"
+              ],
+              "source_ids": [
+                "NIDDK_BODY"
+              ]
+            },
+            {
+              "rule_id": "REC_LIPID_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "lipid_review",
+                "total_at_least": 200,
+                "hdl_below_by_sex": {
+                  "1": 40,
+                  "2": 50
+                }
+              },
+              "trigger_description": "Observed adult age >=20; total cholesterol >=200 mg/dL OR HDL <40 for sex=1 / <50 for sex=2",
+              "text": "An entered lipid measurement may warrant review of the full lipid profile with a clinician. These values alone do not diagnose a lipid disorder or establish a need for treatment.",
+              "rationale": "Conventional adult reference values prompt a contextual review only",
+              "source_labels": [
+                "NIH/MedlinePlus: Cholesterol Levels\u2014What You Need to Know"
+              ],
+              "source_ids": [
+                "NIH_LIPIDS"
+              ]
+            }
+          ]
+        },
+        "recommendation_provenance": {
+          "framework_version": "nhanes_recommendations_v1",
+          "date": "2026-10-18",
+          "config_sha256": "00ad9faf8eaec49dacc53361d5ab757163dfb4365f6aa8edb759d5b24da1dd64",
+          "model_version": "nhanes_phase2_xgb_v1",
+          "guideline_informed": true,
+          "clinician_review_required": true,
+          "disclaimer": "Guideline-informed educational prompts require clinician interpretation; they do not diagnose disease, replace a treatment plan, or prescribe medication. Stratum-specific follow-up priority is a project workflow, not an ADA-endorsed probability cutoff.",
+          "triggered_rule_ids": [
+            "REC_FOLLOWUP_HIGH_001",
+            "REC_SYMPTOMS_001",
+            "REC_MONITOR_HIGH_001",
+            "REC_ACTIVITY_001",
+            "REC_NUTRITION_001",
+            "REC_TOBACCO_001",
+            "REC_WEIGHT_001",
+            "REC_SMOKING_001",
+            "REC_BP_001",
+            "REC_WAIST_001",
+            "REC_LIPID_001"
+          ],
+          "input_policy": "Use observed original inputs only, never imputed values or SHAP signs. Adult measurement conventions apply only when observed age is at least 20. No race-specific actions."
+        }
+      }
+    },
+    "missing_clinical_inputs": {
+      "patient": {
+        "age": 48,
+        "sex": 1,
+        "race_ethnicity": 3,
+        "bmi": null,
+        "waist_cm": 98,
+        "mean_systolic_bp": 128,
+        "mean_diastolic_bp": 80,
+        "hdl_mg_dl": null,
+        "total_cholesterol_mg_dl": 185,
+        "smoking_status": null
+      },
+      "result": {
+        "model_version": "nhanes_phase2_xgb_v1",
+        "predicted_probability": 0.0656874030828476,
+        "predicted_probability_percent": 6.5687403082847595,
+        "default_classification": 0,
+        "default_classification_context": "Technical reference at 0.5 only; not a diagnosis.",
+        "reference_interpretation": "Below both sensitivity-oriented development-derived screening references.",
+        "thresholds": {
+          "default": {
+            "threshold": 0.5,
+            "at_or_above": false
+          },
+          "sensitivity_80_reference": {
+            "threshold": 0.14026810228824615,
+            "at_or_above": false
+          },
+          "sensitivity_90_reference": {
+            "threshold": 0.08646801114082336,
+            "at_or_above": false
+          },
+          "youden_reference": {
+            "threshold": 0.12872706353664398,
+            "at_or_above": false
+          }
+        },
+        "top_increasing_contributors": [
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": null,
+            "was_missing": true,
+            "shap_contribution": 0.005238303914666176,
+            "absolute_shap_magnitude": 0.005238303914666176,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "age",
+            "original_value": 48.0,
+            "was_missing": false,
+            "shap_contribution": 0.003214639611542225,
+            "absolute_shap_magnitude": 0.003214639611542225,
+            "direction": "increases_model_score"
+          }
+        ],
+        "top_decreasing_contributors": [
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.3023402853868902,
+            "absolute_shap_magnitude": 0.3023402853868902,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 98.0,
+            "was_missing": false,
+            "shap_contribution": -0.17437009513378143,
+            "absolute_shap_magnitude": 0.17437009513378143,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 80.0,
+            "was_missing": false,
+            "shap_contribution": -0.1560279130935669,
+            "absolute_shap_magnitude": 0.1560279130935669,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "all_feature_contributions": [
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.3023402853868902,
+            "absolute_shap_magnitude": 0.3023402853868902,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 98.0,
+            "was_missing": false,
+            "shap_contribution": -0.17437009513378143,
+            "absolute_shap_magnitude": 0.17437009513378143,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 80.0,
+            "was_missing": false,
+            "shap_contribution": -0.1560279130935669,
+            "absolute_shap_magnitude": 0.1560279130935669,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "total_cholesterol_mg_dl",
+            "original_value": 185.0,
+            "was_missing": false,
+            "shap_contribution": -0.11931730061769485,
+            "absolute_shap_magnitude": 0.11931730061769485,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "bmi",
+            "original_value": null,
+            "was_missing": true,
+            "shap_contribution": -0.05586618930101395,
+            "absolute_shap_magnitude": 0.05586618930101395,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_systolic_bp",
+            "original_value": 128.0,
+            "was_missing": false,
+            "shap_contribution": -0.04041120037436485,
+            "absolute_shap_magnitude": 0.04041120037436485,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "sex",
+            "original_value": 1.0,
+            "was_missing": false,
+            "shap_contribution": -0.022698630578815937,
+            "absolute_shap_magnitude": 0.022698630578815937,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": null,
+            "was_missing": true,
+            "shap_contribution": 0.005238303914666176,
+            "absolute_shap_magnitude": 0.005238303914666176,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "age",
+            "original_value": 48.0,
+            "was_missing": false,
+            "shap_contribution": 0.003214639611542225,
+            "absolute_shap_magnitude": 0.003214639611542225,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": null,
+            "was_missing": true,
+            "shap_contribution": -0.0017738863825798035,
+            "absolute_shap_magnitude": 0.0017738863825798035,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "explanation_integrity": {
+          "scale": "raw_margin_log_odds",
+          "base_margin": -1.7905526161193848,
+          "raw_margin": -2.6549038887023926,
+          "reconstructed_margin": -2.6549051734618843,
+          "transformed_shap_total": -0.8643525573424995,
+          "core10_shap_total": -0.8643525573424995,
+          "transformed_feature_count": 18,
+          "original_feature_count": 10,
+          "margin_additivity": {
+            "maximum_absolute_error": 1.2847594916820526e-06,
+            "mean_absolute_error": 1.2847594916820526e-06,
+            "absolute_tolerance": 0.0001,
+            "relative_tolerance": 1e-05,
+            "passed": true
+          },
+          "reconstructed_probability": 0.06568732463465622,
+          "probability_absolute_error": 7.844819137348136e-08,
+          "probability_absolute_tolerance": 1e-06,
+          "probability_relative_tolerance": 1e-05,
+          "probability_check_passed": true,
+          "direction_tolerance": 1e-10
+        },
+        "limitations": [
+          "This is model-based decision support, not a diagnosis of diabetes.",
+          "Thresholds are development-derived operating references, not clinically validated clinical cutoffs.",
+          "SHAP explains model behavior, not causation; contributions are log-odds, not probability changes.",
+          "Incomplete inputs may reduce robustness: completed temporal validation showed lower performance among participants with missing Core-10 predictors.",
+          "The target is physician-diagnosed diabetes (DIQ010), not prospective diabetes incidence; intended population is adults."
+        ],
+        "model_derived_risk": {
+          "level": "LOW",
+          "label": "LOW model-derived risk",
+          "lower_boundary": null,
+          "upper_boundary": 0.08646801114082336,
+          "lower_inclusive": false,
+          "upper_inclusive": false,
+          "basis": "Project-defined interpretation of frozen sensitivity-oriented development operating references; not incident diabetes risk.",
+          "boundary_source": "models/nhanes/phase2_xgboost_metadata.json:reference_thresholds",
+          "references": {
+            "sensitivity_90_reference": 0.08646801114082336,
+            "sensitivity_80_reference": 0.14026810228824615
+          },
+          "disclaimer": "Low, Moderate, and High are model-derived decision-support strata based on development operating references. They are not diagnostic categories or clinically validated risk thresholds."
+        },
+        "recommendations": {
+          "clinical_follow_up": [
+            {
+              "rule_id": "REC_FOLLOWUP_LOW_001",
+              "section": "clinical_follow_up",
+              "trigger": {
+                "kind": "stratum",
+                "levels": [
+                  "LOW"
+                ]
+              },
+              "trigger_description": "Model-derived stratum is LOW",
+              "text": "Continue routine preventive care. Discuss diabetes screening according to your age, history, previous results and clinician advice; a LOW model-derived result does not rule out diabetes.",
+              "rationale": "Avoid false reassurance or suppression of clinically indicated screening",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification",
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "ADA2026_2",
+                "PROJECT_WORKFLOW"
+              ]
+            },
+            {
+              "rule_id": "REC_SYMPTOMS_001",
+              "section": "clinical_follow_up",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment, regardless of stratum",
+              "text": "Seek clinical assessment if symptoms such as increased thirst, frequent urination or unexplained weight loss develop, or if other health concerns arise, regardless of the model result.",
+              "rationale": "Symptoms and concerns override reassurance from a classification score",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification"
+              ],
+              "source_ids": [
+                "ADA2026_2"
+              ]
+            }
+          ],
+          "monitoring": [
+            {
+              "rule_id": "REC_MONITOR_LOW_001",
+              "section": "monitoring",
+              "trigger": {
+                "kind": "stratum",
+                "levels": [
+                  "LOW"
+                ]
+              },
+              "trigger_description": "Model-derived stratum is LOW",
+              "text": "Review weight, blood pressure and metabolic health during usual preventive visits; follow the monitoring schedule agreed with your clinician.",
+              "rationale": "Maintain routine cardiometabolic assessment",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification",
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "ADA2026_2",
+                "PROJECT_WORKFLOW"
+              ]
+            }
+          ],
+          "lifestyle": [
+            {
+              "rule_id": "REC_ACTIVITY_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Maintain or build regular physical activity suited to your abilities, preferences and medical circumstances; discuss suitable activity with your health professional when needed.",
+              "rationale": "General individualized activity support, without inferring activity level from the model",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 3: Prevention or Delay",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_3",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_NUTRITION_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Choose a balanced, nutrient-dense eating pattern that fits your preferences, resources and health needs. A qualified nutrition professional can help individualize it.",
+              "rationale": "General nutrition support without a prescribed diet or inferred dietary deficit",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 3: Prevention or Delay",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_3",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_TOBACCO_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Avoid tobacco and vaping, and maintain abstinence if you do not currently use them.",
+              "rationale": "General prevention advice; this does not assert current smoking",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_5"
+              ]
+            }
+          ],
+          "feature_aware": [
+            {
+              "rule_id": "REC_BP_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "bp_review",
+                "systolic_at_least": 120,
+                "diastolic_at_least": 80
+              },
+              "trigger_description": "Observed adult age >=20 and systolic >=120 OR diastolic >=80 mmHg",
+              "text": "An entered blood-pressure measurement may warrant review. Confirm measurement technique and discuss repeat assessment with a healthcare professional; these inputs do not diagnose hypertension.",
+              "rationale": "Use conventional elevated-BP review conventions without labeling a disease",
+              "source_labels": [
+                "2025 AHA/ACC multisociety blood-pressure guideline"
+              ],
+              "source_ids": [
+                "AHA2025_BP"
+              ]
+            },
+            {
+              "rule_id": "REC_MISSING_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "any_missing"
+              },
+              "trigger_description": "At least one original Core-10 input is missing",
+              "text": "Some measurements were unavailable and the frozen pipeline imputed them. Confirm the missing information before relying on the result; feature-specific prompts are not triggered by imputed measurements.",
+              "rationale": "Missingness may reduce robustness and is not an observed abnormality",
+              "source_labels": [
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "PROJECT_WORKFLOW"
+              ]
+            }
+          ]
+        },
+        "recommendation_provenance": {
+          "framework_version": "nhanes_recommendations_v1",
+          "date": "2026-10-18",
+          "config_sha256": "00ad9faf8eaec49dacc53361d5ab757163dfb4365f6aa8edb759d5b24da1dd64",
+          "model_version": "nhanes_phase2_xgb_v1",
+          "guideline_informed": true,
+          "clinician_review_required": true,
+          "disclaimer": "Guideline-informed educational prompts require clinician interpretation; they do not diagnose disease, replace a treatment plan, or prescribe medication. Stratum-specific follow-up priority is a project workflow, not an ADA-endorsed probability cutoff.",
+          "triggered_rule_ids": [
+            "REC_FOLLOWUP_LOW_001",
+            "REC_SYMPTOMS_001",
+            "REC_MONITOR_LOW_001",
+            "REC_ACTIVITY_001",
+            "REC_NUTRITION_001",
+            "REC_TOBACCO_001",
+            "REC_BP_001",
+            "REC_MISSING_001"
+          ],
+          "input_policy": "Use observed original inputs only, never imputed values or SHAP signs. Adult measurement conventions apply only when observed age is at least 20. No race-specific actions."
+        }
+      }
+    },
+    "missing_and_uncommon_inputs": {
+      "patient": {
+        "age": 48,
+        "sex": 1,
+        "race_ethnicity": 3,
+        "bmi": 58.0,
+        "waist_cm": 98,
+        "mean_systolic_bp": 128,
+        "mean_diastolic_bp": 80,
+        "hdl_mg_dl": null,
+        "total_cholesterol_mg_dl": 185,
+        "smoking_status": 1
+      },
+      "result": {
+        "model_version": "nhanes_phase2_xgb_v1",
+        "predicted_probability": 0.10987188667058945,
+        "predicted_probability_percent": 10.987188667058945,
+        "default_classification": 0,
+        "default_classification_context": "Technical reference at 0.5 only; not a diagnosis.",
+        "reference_interpretation": "At or above the 90%-sensitivity development-derived screening reference; below the 80%-sensitivity reference.",
+        "thresholds": {
+          "default": {
+            "threshold": 0.5,
+            "at_or_above": false
+          },
+          "sensitivity_80_reference": {
+            "threshold": 0.14026810228824615,
+            "at_or_above": false
+          },
+          "sensitivity_90_reference": {
+            "threshold": 0.08646801114082336,
+            "at_or_above": true
+          },
+          "youden_reference": {
+            "threshold": 0.12872706353664398,
+            "at_or_above": false
+          }
+        },
+        "top_increasing_contributors": [
+          {
+            "feature": "bmi",
+            "original_value": 58.0,
+            "was_missing": false,
+            "shap_contribution": 0.44024133682250977,
+            "absolute_shap_magnitude": 0.44024133682250977,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 1.0,
+            "was_missing": false,
+            "shap_contribution": 0.016734796576201916,
+            "absolute_shap_magnitude": 0.016734796576201916,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": null,
+            "was_missing": true,
+            "shap_contribution": 0.0021863311994820833,
+            "absolute_shap_magnitude": 0.0021863311994820833,
+            "direction": "increases_model_score"
+          }
+        ],
+        "top_decreasing_contributors": [
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.24490813724696636,
+            "absolute_shap_magnitude": 0.24490813724696636,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 80.0,
+            "was_missing": false,
+            "shap_contribution": -0.1537029892206192,
+            "absolute_shap_magnitude": 0.1537029892206192,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 98.0,
+            "was_missing": false,
+            "shap_contribution": -0.11694487184286118,
+            "absolute_shap_magnitude": 0.11694487184286118,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "all_feature_contributions": [
+          {
+            "feature": "bmi",
+            "original_value": 58.0,
+            "was_missing": false,
+            "shap_contribution": 0.44024133682250977,
+            "absolute_shap_magnitude": 0.44024133682250977,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.24490813724696636,
+            "absolute_shap_magnitude": 0.24490813724696636,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 80.0,
+            "was_missing": false,
+            "shap_contribution": -0.1537029892206192,
+            "absolute_shap_magnitude": 0.1537029892206192,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 98.0,
+            "was_missing": false,
+            "shap_contribution": -0.11694487184286118,
+            "absolute_shap_magnitude": 0.11694487184286118,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "total_cholesterol_mg_dl",
+            "original_value": 185.0,
+            "was_missing": false,
+            "shap_contribution": -0.10557964444160461,
+            "absolute_shap_magnitude": 0.10557964444160461,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "age",
+            "original_value": 48.0,
+            "was_missing": false,
+            "shap_contribution": -0.06725286692380905,
+            "absolute_shap_magnitude": 0.06725286692380905,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_systolic_bp",
+            "original_value": 128.0,
+            "was_missing": false,
+            "shap_contribution": -0.055368129163980484,
+            "absolute_shap_magnitude": 0.055368129163980484,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "sex",
+            "original_value": 1.0,
+            "was_missing": false,
+            "shap_contribution": -0.016904149786569178,
+            "absolute_shap_magnitude": 0.016904149786569178,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 1.0,
+            "was_missing": false,
+            "shap_contribution": 0.016734796576201916,
+            "absolute_shap_magnitude": 0.016734796576201916,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": null,
+            "was_missing": true,
+            "shap_contribution": 0.0021863311994820833,
+            "absolute_shap_magnitude": 0.0021863311994820833,
+            "direction": "increases_model_score"
+          }
+        ],
+        "explanation_integrity": {
+          "scale": "raw_margin_log_odds",
+          "base_margin": -1.7905526161193848,
+          "raw_margin": -2.092050313949585,
+          "reconstructed_margin": -2.092050940147601,
+          "transformed_shap_total": -0.3014983240282163,
+          "core10_shap_total": -0.3014983240282163,
+          "transformed_feature_count": 18,
+          "original_feature_count": 10,
+          "margin_additivity": {
+            "maximum_absolute_error": 6.261980161070824e-07,
+            "mean_absolute_error": 6.261980161070824e-07,
+            "absolute_tolerance": 0.0001,
+            "relative_tolerance": 1e-05,
+            "passed": true
+          },
+          "reconstructed_probability": 0.109871831840966,
+          "probability_absolute_error": 5.482962345260134e-08,
+          "probability_absolute_tolerance": 1e-06,
+          "probability_relative_tolerance": 1e-05,
+          "probability_check_passed": true,
+          "direction_tolerance": 1e-10
+        },
+        "limitations": [
+          "This is model-based decision support, not a diagnosis of diabetes.",
+          "Thresholds are development-derived operating references, not clinically validated clinical cutoffs.",
+          "SHAP explains model behavior, not causation; contributions are log-odds, not probability changes.",
+          "Incomplete inputs may reduce robustness: completed temporal validation showed lower performance among participants with missing Core-10 predictors.",
+          "The target is physician-diagnosed diabetes (DIQ010), not prospective diabetes incidence; intended population is adults."
+        ],
+        "model_derived_risk": {
+          "level": "MODERATE",
+          "label": "MODERATE model-derived risk",
+          "lower_boundary": 0.08646801114082336,
+          "upper_boundary": 0.14026810228824615,
+          "lower_inclusive": true,
+          "upper_inclusive": false,
+          "basis": "Project-defined interpretation of frozen sensitivity-oriented development operating references; not incident diabetes risk.",
+          "boundary_source": "models/nhanes/phase2_xgboost_metadata.json:reference_thresholds",
+          "references": {
+            "sensitivity_90_reference": 0.08646801114082336,
+            "sensitivity_80_reference": 0.14026810228824615
+          },
+          "disclaimer": "Low, Moderate, and High are model-derived decision-support strata based on development operating references. They are not diagnostic categories or clinically validated risk thresholds."
+        },
+        "recommendations": {
+          "clinical_follow_up": [
+            {
+              "rule_id": "REC_FOLLOWUP_MODERATE_001",
+              "section": "clinical_follow_up",
+              "trigger": {
+                "kind": "stratum",
+                "levels": [
+                  "MODERATE"
+                ]
+              },
+              "trigger_description": "Model-derived stratum is MODERATE",
+              "text": "Discuss this model result with a qualified health professional. Review whether diabetes screening or laboratory assessment is appropriate given symptoms, age, family history and previous results.",
+              "rationale": "Clinical context determines whether and how to test",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification",
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "ADA2026_2",
+                "PROJECT_WORKFLOW"
+              ]
+            },
+            {
+              "rule_id": "REC_SYMPTOMS_001",
+              "section": "clinical_follow_up",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment, regardless of stratum",
+              "text": "Seek clinical assessment if symptoms such as increased thirst, frequent urination or unexplained weight loss develop, or if other health concerns arise, regardless of the model result.",
+              "rationale": "Symptoms and concerns override reassurance from a classification score",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification"
+              ],
+              "source_ids": [
+                "ADA2026_2"
+              ]
+            }
+          ],
+          "monitoring": [
+            {
+              "rule_id": "REC_MONITOR_MODERATE_001",
+              "section": "monitoring",
+              "trigger": {
+                "kind": "stratum",
+                "levels": [
+                  "MODERATE"
+                ]
+              },
+              "trigger_description": "Model-derived stratum is MODERATE",
+              "text": "Review weight/BMI, waist measurements, blood pressure, lipids and other relevant history with your clinician. Reassessment should follow the clinician's advice.",
+              "rationale": "Review the broader cardiometabolic context",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 2: Diagnosis and Classification",
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "ADA2026_2",
+                "PROJECT_WORKFLOW"
+              ]
+            }
+          ],
+          "lifestyle": [
+            {
+              "rule_id": "REC_ACTIVITY_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Maintain or build regular physical activity suited to your abilities, preferences and medical circumstances; discuss suitable activity with your health professional when needed.",
+              "rationale": "General individualized activity support, without inferring activity level from the model",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 3: Prevention or Delay",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_3",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_NUTRITION_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Choose a balanced, nutrient-dense eating pattern that fits your preferences, resources and health needs. A qualified nutrition professional can help individualize it.",
+              "rationale": "General nutrition support without a prescribed diet or inferred dietary deficit",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 3: Prevention or Delay",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_3",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_TOBACCO_001",
+              "section": "lifestyle",
+              "trigger": {
+                "kind": "always"
+              },
+              "trigger_description": "Every assessment",
+              "text": "Avoid tobacco and vaping, and maintain abstinence if you do not currently use them.",
+              "rationale": "General prevention advice; this does not assert current smoking",
+              "source_labels": [
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "ADA2026_5"
+              ]
+            }
+          ],
+          "feature_aware": [
+            {
+              "rule_id": "REC_WEIGHT_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "bmi_review",
+                "at_least": 25
+              },
+              "trigger_description": "Observed adult age >=20 and observed BMI >=25 kg/m\u00b2",
+              "text": "The entered BMI meets a conventional adult weight-review threshold. Consider discussing individualized weight-management support; BMI alone does not establish a disease or the right plan for you.",
+              "rationale": "Observed BMI supports a contextual weight discussion, not a treatment assignment",
+              "source_labels": [
+                "NIH/NIDDK: Health Tips for Adults",
+                "ADA Standards of Care in Diabetes\u20142026, section 5: Positive Health Behaviors"
+              ],
+              "source_ids": [
+                "NIDDK_BODY",
+                "ADA2026_5"
+              ]
+            },
+            {
+              "rule_id": "REC_BP_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "bp_review",
+                "systolic_at_least": 120,
+                "diastolic_at_least": 80
+              },
+              "trigger_description": "Observed adult age >=20 and systolic >=120 OR diastolic >=80 mmHg",
+              "text": "An entered blood-pressure measurement may warrant review. Confirm measurement technique and discuss repeat assessment with a healthcare professional; these inputs do not diagnose hypertension.",
+              "rationale": "Use conventional elevated-BP review conventions without labeling a disease",
+              "source_labels": [
+                "2025 AHA/ACC multisociety blood-pressure guideline"
+              ],
+              "source_ids": [
+                "AHA2025_BP"
+              ]
+            },
+            {
+              "rule_id": "REC_MISSING_001",
+              "section": "feature_aware",
+              "trigger": {
+                "kind": "any_missing"
+              },
+              "trigger_description": "At least one original Core-10 input is missing",
+              "text": "Some measurements were unavailable and the frozen pipeline imputed them. Confirm the missing information before relying on the result; feature-specific prompts are not triggered by imputed measurements.",
+              "rationale": "Missingness may reduce robustness and is not an observed abnormality",
+              "source_labels": [
+                "Project-defined model-derived CDSS workflow v1"
+              ],
+              "source_ids": [
+                "PROJECT_WORKFLOW"
+              ]
+            }
+          ]
+        },
+        "recommendation_provenance": {
+          "framework_version": "nhanes_recommendations_v1",
+          "date": "2026-10-18",
+          "config_sha256": "00ad9faf8eaec49dacc53361d5ab757163dfb4365f6aa8edb759d5b24da1dd64",
+          "model_version": "nhanes_phase2_xgb_v1",
+          "guideline_informed": true,
+          "clinician_review_required": true,
+          "disclaimer": "Guideline-informed educational prompts require clinician interpretation; they do not diagnose disease, replace a treatment plan, or prescribe medication. Stratum-specific follow-up priority is a project workflow, not an ADA-endorsed probability cutoff.",
+          "triggered_rule_ids": [
+            "REC_FOLLOWUP_MODERATE_001",
+            "REC_SYMPTOMS_001",
+            "REC_MONITOR_MODERATE_001",
+            "REC_ACTIVITY_001",
+            "REC_NUTRITION_001",
+            "REC_TOBACCO_001",
+            "REC_WEIGHT_001",
+            "REC_BP_001",
+            "REC_MISSING_001"
+          ],
+          "input_policy": "Use observed original inputs only, never imputed values or SHAP signs. Adult measurement conventions apply only when observed age is at least 20. No race-specific actions."
+        }
+      }
+    }
+  }
+}

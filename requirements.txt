@@ -1,0 +1,14 @@
+# Cloud inference only. Preserve the frozen joblib/XGBoost numerical environment.
+# Select Python 3.13 in Streamlit Community Cloud Advanced settings.
+streamlit==1.66.0
+numpy==2.5.3
+pandas==3.0.6
+scikit-learn==1.9.1
+xgboost==3.4.1; platform_system != "Linux"
+# Official CPU distribution exposes the same xgboost API without CUDA/NCCL.
+xgboost-cpu==3.4.1; platform_system == "Linux"
+joblib==1.6.0
+scipy==1.18.1
+shap==0.54.1
+matplotlib==3.11.2
+pillow==12.3.0

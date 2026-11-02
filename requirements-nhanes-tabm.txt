@@ -1,0 +1,6 @@
+# Separate secondary experiment; does not change frozen primary-model dependencies.
+-r requirements-nhanes-baseline.txt
+tabm==0.0.3
+torch==2.15.0
+rtdl_num_embeddings==0.0.12
+matplotlib==3.11.2

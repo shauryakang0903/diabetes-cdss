@@ -1,0 +1,41 @@
+# Environments, downloads, local deployment checks and test scratch directories.
+.venv/
+.venv*/
+venv/
+.deployment*/
+.test_tmp*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage*
+htmlcov/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.temp
+*.bak
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.pem
+*.key
+
+# Public app does not need participant-level datasets or experimental weights.
+/data/
+/models/nhanes/experimental/
+/notebooks/
+
+# Keep only the small optional global SHAP image used by app.py.
+/results/*
+!/results/nhanes/
+/results/nhanes/*
+!/results/nhanes/xai/
+/results/nhanes/xai/*
+!/results/nhanes/xai/figures/
+/results/nhanes/xai/figures/*
+!/results/nhanes/xai/figures/shap_global_core10_bar.png

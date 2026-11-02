@@ -1,0 +1,602 @@
+{
+  "description": "Frozen synthetic outputs captured before adding the post-prediction recommendation framework",
+  "artifact_sha256": "fa2254598fc24d8c93bbf9cfe597aece0e1137f227098e58efe38bcf302a8528",
+  "profiles": {
+    "relatively_lower_scoring_example": {
+      "patient": {
+        "age": 25,
+        "sex": 2,
+        "race_ethnicity": 3,
+        "bmi": 22,
+        "waist_cm": 78,
+        "mean_systolic_bp": 112,
+        "mean_diastolic_bp": 72,
+        "hdl_mg_dl": 65,
+        "total_cholesterol_mg_dl": 190,
+        "smoking_status": 0
+      },
+      "result": {
+        "model_version": "nhanes_phase2_xgb_v1",
+        "predicted_probability": 0.005870712921023369,
+        "predicted_probability_percent": 0.5870712921023369,
+        "default_classification": 0,
+        "default_classification_context": "Technical reference at 0.5 only; not a diagnosis.",
+        "reference_interpretation": "Below both sensitivity-oriented development-derived screening references.",
+        "thresholds": {
+          "default": {
+            "threshold": 0.5,
+            "at_or_above": false
+          },
+          "sensitivity_80_reference": {
+            "threshold": 0.14026810228824615,
+            "at_or_above": false
+          },
+          "sensitivity_90_reference": {
+            "threshold": 0.08646801114082336,
+            "at_or_above": false
+          },
+          "youden_reference": {
+            "threshold": 0.12872706353664398,
+            "at_or_above": false
+          }
+        },
+        "top_increasing_contributors": [
+          {
+            "feature": "sex",
+            "original_value": 2.0,
+            "was_missing": false,
+            "shap_contribution": 0.027949306182563305,
+            "absolute_shap_magnitude": 0.027949306182563305,
+            "direction": "increases_model_score"
+          }
+        ],
+        "top_decreasing_contributors": [
+          {
+            "feature": "age",
+            "original_value": 25.0,
+            "was_missing": false,
+            "shap_contribution": -1.6261156797409058,
+            "absolute_shap_magnitude": 1.6261156797409058,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 78.0,
+            "was_missing": false,
+            "shap_contribution": -0.8274046778678894,
+            "absolute_shap_magnitude": 0.8274046778678894,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": 65.0,
+            "was_missing": false,
+            "shap_contribution": -0.24715468287467957,
+            "absolute_shap_magnitude": 0.24715468287467957,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "all_feature_contributions": [
+          {
+            "feature": "age",
+            "original_value": 25.0,
+            "was_missing": false,
+            "shap_contribution": -1.6261156797409058,
+            "absolute_shap_magnitude": 1.6261156797409058,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 78.0,
+            "was_missing": false,
+            "shap_contribution": -0.8274046778678894,
+            "absolute_shap_magnitude": 0.8274046778678894,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": 65.0,
+            "was_missing": false,
+            "shap_contribution": -0.24715468287467957,
+            "absolute_shap_magnitude": 0.24715468287467957,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.22823122120462358,
+            "absolute_shap_magnitude": 0.22823122120462358,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_systolic_bp",
+            "original_value": 112.0,
+            "was_missing": false,
+            "shap_contribution": -0.14552608132362366,
+            "absolute_shap_magnitude": 0.14552608132362366,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "bmi",
+            "original_value": 22.0,
+            "was_missing": false,
+            "shap_contribution": -0.13453365862369537,
+            "absolute_shap_magnitude": 0.13453365862369537,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "total_cholesterol_mg_dl",
+            "original_value": 190.0,
+            "was_missing": false,
+            "shap_contribution": -0.11864558607339859,
+            "absolute_shap_magnitude": 0.11864558607339859,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 72.0,
+            "was_missing": false,
+            "shap_contribution": -0.03735337406396866,
+            "absolute_shap_magnitude": 0.03735337406396866,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "sex",
+            "original_value": 2.0,
+            "was_missing": false,
+            "shap_contribution": 0.027949306182563305,
+            "absolute_shap_magnitude": 0.027949306182563305,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 0.0,
+            "was_missing": false,
+            "shap_contribution": -0.004323397792177275,
+            "absolute_shap_magnitude": 0.004323397792177275,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "explanation_integrity": {
+          "scale": "raw_margin_log_odds",
+          "base_margin": -1.7905526161193848,
+          "raw_margin": -5.131891250610352,
+          "reconstructed_margin": -5.131891669501783,
+          "transformed_shap_total": -3.3413390533823986,
+          "core10_shap_total": -3.3413390533823986,
+          "transformed_feature_count": 18,
+          "original_feature_count": 10,
+          "margin_additivity": {
+            "maximum_absolute_error": 4.188914317637682e-07,
+            "mean_absolute_error": 4.188914317637682e-07,
+            "absolute_tolerance": 0.0001,
+            "relative_tolerance": 1e-05,
+            "passed": true
+          },
+          "reconstructed_probability": 0.005870710108494831,
+          "probability_absolute_error": 2.812528538190251e-09,
+          "probability_absolute_tolerance": 1e-06,
+          "probability_relative_tolerance": 1e-05,
+          "probability_check_passed": true,
+          "direction_tolerance": 1e-10
+        },
+        "limitations": [
+          "This is model-based decision support, not a diagnosis of diabetes.",
+          "Thresholds are development-derived operating references, not clinically validated clinical cutoffs.",
+          "SHAP explains model behavior, not causation; contributions are log-odds, not probability changes.",
+          "Incomplete inputs may reduce robustness: completed temporal validation showed lower performance among participants with missing Core-10 predictors.",
+          "The target is physician-diagnosed diabetes (DIQ010), not prospective diabetes incidence; intended population is adults."
+        ]
+      }
+    },
+    "intermediate_scoring_example": {
+      "patient": {
+        "age": 48,
+        "sex": 1,
+        "race_ethnicity": 3,
+        "bmi": 28,
+        "waist_cm": 98,
+        "mean_systolic_bp": 128,
+        "mean_diastolic_bp": 80,
+        "hdl_mg_dl": 48,
+        "total_cholesterol_mg_dl": 185,
+        "smoking_status": 1
+      },
+      "result": {
+        "model_version": "nhanes_phase2_xgb_v1",
+        "predicted_probability": 0.06542942672967911,
+        "predicted_probability_percent": 6.542942672967911,
+        "default_classification": 0,
+        "default_classification_context": "Technical reference at 0.5 only; not a diagnosis.",
+        "reference_interpretation": "Below both sensitivity-oriented development-derived screening references.",
+        "thresholds": {
+          "default": {
+            "threshold": 0.5,
+            "at_or_above": false
+          },
+          "sensitivity_80_reference": {
+            "threshold": 0.14026810228824615,
+            "at_or_above": false
+          },
+          "sensitivity_90_reference": {
+            "threshold": 0.08646801114082336,
+            "at_or_above": false
+          },
+          "youden_reference": {
+            "threshold": 0.12872706353664398,
+            "at_or_above": false
+          }
+        },
+        "top_increasing_contributors": [
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": 48.0,
+            "was_missing": false,
+            "shap_contribution": 0.02378878742456436,
+            "absolute_shap_magnitude": 0.02378878742456436,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 1.0,
+            "was_missing": false,
+            "shap_contribution": 0.010528516839258373,
+            "absolute_shap_magnitude": 0.010528516839258373,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "age",
+            "original_value": 48.0,
+            "was_missing": false,
+            "shap_contribution": 0.007506098598241806,
+            "absolute_shap_magnitude": 0.007506098598241806,
+            "direction": "increases_model_score"
+          }
+        ],
+        "top_decreasing_contributors": [
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.299150780076161,
+            "absolute_shap_magnitude": 0.299150780076161,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 98.0,
+            "was_missing": false,
+            "shap_contribution": -0.17739509046077728,
+            "absolute_shap_magnitude": 0.17739509046077728,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 80.0,
+            "was_missing": false,
+            "shap_contribution": -0.16259393095970154,
+            "absolute_shap_magnitude": 0.16259393095970154,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "all_feature_contributions": [
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.299150780076161,
+            "absolute_shap_magnitude": 0.299150780076161,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 98.0,
+            "was_missing": false,
+            "shap_contribution": -0.17739509046077728,
+            "absolute_shap_magnitude": 0.17739509046077728,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 80.0,
+            "was_missing": false,
+            "shap_contribution": -0.16259393095970154,
+            "absolute_shap_magnitude": 0.16259393095970154,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "total_cholesterol_mg_dl",
+            "original_value": 185.0,
+            "was_missing": false,
+            "shap_contribution": -0.12909261882305145,
+            "absolute_shap_magnitude": 0.12909261882305145,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "bmi",
+            "original_value": 28.0,
+            "was_missing": false,
+            "shap_contribution": -0.07743179798126221,
+            "absolute_shap_magnitude": 0.07743179798126221,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_systolic_bp",
+            "original_value": 128.0,
+            "was_missing": false,
+            "shap_contribution": -0.039834532886743546,
+            "absolute_shap_magnitude": 0.039834532886743546,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "sex",
+            "original_value": 1.0,
+            "was_missing": false,
+            "shap_contribution": -0.02488858182914555,
+            "absolute_shap_magnitude": 0.02488858182914555,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": 48.0,
+            "was_missing": false,
+            "shap_contribution": 0.02378878742456436,
+            "absolute_shap_magnitude": 0.02378878742456436,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 1.0,
+            "was_missing": false,
+            "shap_contribution": 0.010528516839258373,
+            "absolute_shap_magnitude": 0.010528516839258373,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "age",
+            "original_value": 48.0,
+            "was_missing": false,
+            "shap_contribution": 0.007506098598241806,
+            "absolute_shap_magnitude": 0.007506098598241806,
+            "direction": "increases_model_score"
+          }
+        ],
+        "explanation_integrity": {
+          "scale": "raw_margin_log_odds",
+          "base_margin": -1.7905526161193848,
+          "raw_margin": -2.6591150760650635,
+          "reconstructed_margin": -2.659116546274163,
+          "transformed_shap_total": -0.8685639301547781,
+          "core10_shap_total": -0.8685639301547781,
+          "transformed_feature_count": 18,
+          "original_feature_count": 10,
+          "margin_additivity": {
+            "maximum_absolute_error": 1.4702090993523598e-06,
+            "mean_absolute_error": 1.4702090993523598e-06,
+            "absolute_tolerance": 0.0001,
+            "relative_tolerance": 1e-05,
+            "passed": true
+          },
+          "reconstructed_probability": 0.06542933441564427,
+          "probability_absolute_error": 9.23140348330076e-08,
+          "probability_absolute_tolerance": 1e-06,
+          "probability_relative_tolerance": 1e-05,
+          "probability_check_passed": true,
+          "direction_tolerance": 1e-10
+        },
+        "limitations": [
+          "This is model-based decision support, not a diagnosis of diabetes.",
+          "Thresholds are development-derived operating references, not clinically validated clinical cutoffs.",
+          "SHAP explains model behavior, not causation; contributions are log-odds, not probability changes.",
+          "Incomplete inputs may reduce robustness: completed temporal validation showed lower performance among participants with missing Core-10 predictors.",
+          "The target is physician-diagnosed diabetes (DIQ010), not prospective diabetes incidence; intended population is adults."
+        ]
+      }
+    },
+    "higher_scoring_example": {
+      "patient": {
+        "age": 68,
+        "sex": 1,
+        "race_ethnicity": 3,
+        "bmi": 35,
+        "waist_cm": 118,
+        "mean_systolic_bp": 145,
+        "mean_diastolic_bp": 78,
+        "hdl_mg_dl": 35,
+        "total_cholesterol_mg_dl": 150,
+        "smoking_status": 2
+      },
+      "result": {
+        "model_version": "nhanes_phase2_xgb_v1",
+        "predicted_probability": 0.5252653956413269,
+        "predicted_probability_percent": 52.52653956413269,
+        "default_classification": 1,
+        "default_classification_context": "Technical reference at 0.5 only; not a diagnosis.",
+        "reference_interpretation": "At or above both the 80%- and 90%-sensitivity development-derived screening references.",
+        "thresholds": {
+          "default": {
+            "threshold": 0.5,
+            "at_or_above": true
+          },
+          "sensitivity_80_reference": {
+            "threshold": 0.14026810228824615,
+            "at_or_above": true
+          },
+          "sensitivity_90_reference": {
+            "threshold": 0.08646801114082336,
+            "at_or_above": true
+          },
+          "youden_reference": {
+            "threshold": 0.12872706353664398,
+            "at_or_above": true
+          }
+        },
+        "top_increasing_contributors": [
+          {
+            "feature": "age",
+            "original_value": 68.0,
+            "was_missing": false,
+            "shap_contribution": 0.8232186436653137,
+            "absolute_shap_magnitude": 0.8232186436653137,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "total_cholesterol_mg_dl",
+            "original_value": 150.0,
+            "was_missing": false,
+            "shap_contribution": 0.4794929325580597,
+            "absolute_shap_magnitude": 0.4794929325580597,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 118.0,
+            "was_missing": false,
+            "shap_contribution": 0.3673514723777771,
+            "absolute_shap_magnitude": 0.3673514723777771,
+            "direction": "increases_model_score"
+          }
+        ],
+        "top_decreasing_contributors": [
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.20733408350497484,
+            "absolute_shap_magnitude": 0.20733408350497484,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 78.0,
+            "was_missing": false,
+            "shap_contribution": -0.1399342268705368,
+            "absolute_shap_magnitude": 0.1399342268705368,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 2.0,
+            "was_missing": false,
+            "shap_contribution": -0.049986134050413966,
+            "absolute_shap_magnitude": 0.049986134050413966,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "all_feature_contributions": [
+          {
+            "feature": "age",
+            "original_value": 68.0,
+            "was_missing": false,
+            "shap_contribution": 0.8232186436653137,
+            "absolute_shap_magnitude": 0.8232186436653137,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "total_cholesterol_mg_dl",
+            "original_value": 150.0,
+            "was_missing": false,
+            "shap_contribution": 0.4794929325580597,
+            "absolute_shap_magnitude": 0.4794929325580597,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "waist_cm",
+            "original_value": 118.0,
+            "was_missing": false,
+            "shap_contribution": 0.3673514723777771,
+            "absolute_shap_magnitude": 0.3673514723777771,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "hdl_mg_dl",
+            "original_value": 35.0,
+            "was_missing": false,
+            "shap_contribution": 0.3028915226459503,
+            "absolute_shap_magnitude": 0.3028915226459503,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "race_ethnicity",
+            "original_value": 3.0,
+            "was_missing": false,
+            "shap_contribution": -0.20733408350497484,
+            "absolute_shap_magnitude": 0.20733408350497484,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "bmi",
+            "original_value": 35.0,
+            "was_missing": false,
+            "shap_contribution": 0.1736259162425995,
+            "absolute_shap_magnitude": 0.1736259162425995,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "mean_systolic_bp",
+            "original_value": 145.0,
+            "was_missing": false,
+            "shap_contribution": 0.17151771485805511,
+            "absolute_shap_magnitude": 0.17151771485805511,
+            "direction": "increases_model_score"
+          },
+          {
+            "feature": "mean_diastolic_bp",
+            "original_value": 78.0,
+            "was_missing": false,
+            "shap_contribution": -0.1399342268705368,
+            "absolute_shap_magnitude": 0.1399342268705368,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "smoking_status",
+            "original_value": 2.0,
+            "was_missing": false,
+            "shap_contribution": -0.049986134050413966,
+            "absolute_shap_magnitude": 0.049986134050413966,
+            "direction": "decreases_model_score"
+          },
+          {
+            "feature": "sex",
+            "original_value": 1.0,
+            "was_missing": false,
+            "shap_contribution": -0.02914385125041008,
+            "absolute_shap_magnitude": 0.02914385125041008,
+            "direction": "decreases_model_score"
+          }
+        ],
+        "explanation_integrity": {
+          "scale": "raw_margin_log_odds",
+          "base_margin": -1.7905526161193848,
+          "raw_margin": 0.10114786028862,
+          "reconstructed_margin": 0.10114729055203497,
+          "transformed_shap_total": 1.8916999066714197,
+          "core10_shap_total": 1.8916999066714197,
+          "transformed_feature_count": 18,
+          "original_feature_count": 10,
+          "margin_additivity": {
+            "maximum_absolute_error": 5.69736585021019e-07,
+            "mean_absolute_error": 5.69736585021019e-07,
+            "absolute_tolerance": 0.0001,
+            "relative_tolerance": 1e-05,
+            "passed": true
+          },
+          "reconstructed_probability": 0.5252652860232526,
+          "probability_absolute_error": 1.0961807428433445e-07,
+          "probability_absolute_tolerance": 1e-06,
+          "probability_relative_tolerance": 1e-05,
+          "probability_check_passed": true,
+          "direction_tolerance": 1e-10
+        },
+        "limitations": [
+          "This is model-based decision support, not a diagnosis of diabetes.",
+          "Thresholds are development-derived operating references, not clinically validated clinical cutoffs.",
+          "SHAP explains model behavior, not causation; contributions are log-odds, not probability changes.",
+          "Incomplete inputs may reduce robustness: completed temporal validation showed lower performance among participants with missing Core-10 predictors.",
+          "The target is physician-diagnosed diabetes (DIQ010), not prospective diabetes incidence; intended population is adults."
+        ]
+      }
+    }
+  }
+}

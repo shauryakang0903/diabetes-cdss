@@ -1,0 +1,3 @@
+-c configs/nhanes_xai_constraints.txt
+shap==0.54.1
+matplotlib==3.11.2
