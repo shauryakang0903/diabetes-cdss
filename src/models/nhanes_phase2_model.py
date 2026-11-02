@@ -58,6 +58,18 @@ def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def canonical_json_sha256(path):
+    """Hash parsed JSON content, independent of line endings, whitespace and key order.
+
+    This is for text metadata only. Binary model artifacts retain exact byte hashes.
+    Nonfinite JSON numbers are rejected rather than silently canonicalized.
+    """
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    canonical = json.dumps(data, sort_keys=True, separators=(",", ":"),
+                           ensure_ascii=False, allow_nan=False).encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest()
+
+
 def runtime_package_version(name):
     """Official Linux CPU wheels use a different distribution name, same API/version."""
     try:

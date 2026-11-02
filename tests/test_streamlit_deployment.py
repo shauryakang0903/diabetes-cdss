@@ -66,7 +66,8 @@ def test_health_check_in_unrelated_cwd_without_fitting(tmp_path, monkeypatch):
     assert report['probability'] == pytest.approx(.005870712921023369, abs=1e-8)
     assert report['model_derived_stratum'] == 'LOW'
     assert report['model_sha256'] == deployment.EXPECTED_MODEL_SHA256
-    assert report['metadata_sha256'] == deployment.EXPECTED_METADATA_SHA256
+    assert report['metadata_sha256'] == frozen.sha256(frozen.DEFAULT_METADATA_PATH)
+    assert report['metadata_canonical_sha256'] == deployment.EXPECTED_METADATA_CANONICAL_SHA256
 
 
 def test_missing_essential_artifacts_fail_clearly(tmp_path, monkeypatch):
@@ -77,6 +78,9 @@ def test_missing_essential_artifacts_fail_clearly(tmp_path, monkeypatch):
 
 def test_minimal_repository_copy_has_no_dataset_or_result_dependency(tmp_path):
     bundle = deployment_copy(tmp_path/'public-copy')
+    # Simulate Git's Linux checkout, including the metadata raw-byte hash drift.
+    metadata = bundle/'models/nhanes/phase2_xgboost_metadata.json'
+    metadata.write_bytes(metadata.read_bytes().replace(b'\r\n', b'\n'))
     assert not (bundle/'data').exists() and not (bundle/'results').exists()
     assert not (bundle/'src/models/nhanes_tabm.py').exists()
     result = subprocess.run([sys.executable, str(bundle/'scripts/check_streamlit_deployment.py')],
@@ -84,6 +88,9 @@ def test_minimal_repository_copy_has_no_dataset_or_result_dependency(tmp_path):
     assert result.returncode == 0, result.stderr
     report = json.loads(result.stdout)
     assert report['passed'] and not report['optional_global_shap_image']
+    assert report['metadata_sha256'] != deployment.EXPECTED_METADATA_SHA256
+    assert report['metadata_canonical_sha256'] == deployment.EXPECTED_METADATA_CANONICAL_SHA256
+    assert report['xgboost_module_version'] == '3.4.1'
 
 
 def test_existing_synthetic_outputs_preserved():

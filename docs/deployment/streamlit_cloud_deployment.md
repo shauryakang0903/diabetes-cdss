@@ -1,5 +1,39 @@
 # Streamlit Community Cloud deployment
 
+**Deploy with Python 3.13. The frozen joblib artifact was created and verified under Python 3.13.4. Do not assume Python 3.14 compatibility.** The reported cloud environment (3.14.10) must be replaced by a Python 3.13 deployment; a code update or reboot alone will not change its interpreter.
+
+## JSON provenance fix and existing-app redeployment
+
+The public GitHub metadata was confirmed to be exactly the local metadata with its 407 CRLF line endings replaced by LF. Logical JSON content was identical. Raw SHA-256 changed from the historical Windows value 57fa864c5e81d28120ab414f94b326d86977535a88c22e79f8ac474037be66d3 to Linux/Git LF value 1f137a5448ed10c2ba323479795ac093b64b538591c64344ef385512ae1bf11c. This caused the input-reference validator's raw-JSON hash comparison to reject otherwise unchanged metadata. The deployment health check had the same raw-JSON issue and is corrected too.
+
+The shared canonical_json_sha256 helper parses UTF-8 JSON, serializes with sorted keys, separators comma/colon without spaces, ensure_ascii=False and allow_nan=False, then hashes the UTF-8 bytes. It ignores text formatting, key order and escaping, but changes when actual metadata values change. This is the project's deterministic JSON encoding, not a claim of a general RFC canonicalization implementation. Nonfinite numeric metadata is rejected.
+
+The committed input-reference JSON now adds frozen_metadata_canonical_sha256:
+
+```text
+cacd39ae02b71aa42ab1dc1133687a22c7e36bfcfabbbbefd17482674108cf79
+```
+
+The historical frozen_metadata_sha256 is retained unchanged. It no longer gates inference. The binary artifact comparison remains strict, and reference/model version, development hash, artifact hash and ordered Core-10 schema must also agree directly with frozen metadata. The entire metadata content remains pinned by the canonical digest. Legacy references missing the new field fail with a migration message; no check is silently bypassed. The original frozen metadata file itself was not rewritten, and no ranges/statistics were regenerated. Publish the loader changes and updated reference in the same commit.
+
+.gitattributes marks joblib files as binary/non-text to prevent Git text conversion. Canonical JSON validation remains necessary independently of Git attributes. Raw hashes in historical research evidence are archival, not portable runtime JSON checks.
+
+To publish this fix from the existing main checkout:
+
+```powershell
+git status --short
+git add .gitattributes README.md docs/deployment/streamlit_cloud_deployment.md src/models/nhanes_phase2_model.py src/decision_support/nhanes_input_quality.py scripts/check_streamlit_deployment.py models/nhanes/phase2_input_reference_metadata.json tests/test_nhanes_metadata_provenance.py tests/test_streamlit_deployment.py
+git diff --cached --stat
+git commit -m "Fix cross-platform JSON provenance and document Python 3.13 deployment"
+git push origin main
+```
+
+Changing Python for an existing Community Cloud app requires deletion and recreation, according to the [official interpreter-change instructions](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-python). First record its current subdomain, repository coordinates and any secrets. Then delete the existing 3.14 app, create a new app using shauryakang0903/diabetes-cdss, branch main, entrypoint app.py, and select **Python 3.13** in Advanced settings before deploying. Reuse the recorded subdomain if desired. Wait for installation, inspect logs for Python 3.13 and XGBoost module version 3.4.1, and run the lower synthetic example. No deletion or remote push is performed by this local fix.
+
+Verification of this fix: **46 focused tests passed** (39.23 seconds), followed by **241 full-suite tests passed** (212.26 seconds). Regression coverage includes equivalent LF/CRLF/compact JSON, real metadata changes, strict binary rejection, semantic-field mismatches despite a re-pinned canonical hash, missing-field migration, invalid nonfinite JSON, complete LF backend initialization and the deployment preflight on a Git-like LF checkout. In the actual xgboost-cpu 3.4.1 environment, the imported xgboost module reported 3.4.1 and the lower synthetic probability stayed 0.005870712921023369 (0.5870712921023369%), with LOW stratum, valid SHAP, four recommendation sections and Complete input quality. No Python 3.14 verification is claimed.
+
+The frozen model and original metadata bytes remain exactly unchanged locally. The input-reference change adds only the canonical digest; existing numeric/category references and historical byte hash remain unchanged. Evidence is saved locally under ignored results/deployment/provenance_fix/ (line_ending_diagnosis.json, cpu_backend_regression.json, pytest_focused.xml, pytest_full.xml and final_integrity.json).
+
 ## Audit and decisions
 
 The pre-deployment root requirements.txt, .gitignore and README.md were empty. No existing Git repository, pyproject.toml or setup configuration was present. The main application already used source-relative pathlib paths and a cached, locked inference service; no redesign or prediction changes were necessary. Several research loaders/scripts used cwd-relative paths; these now resolve from their source file without changing cohort logic. No active Python source contained a literal user-specific Windows absolute path.

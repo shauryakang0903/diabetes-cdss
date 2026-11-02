@@ -1,0 +1,2 @@
+# Binary prediction artifacts must never undergo text/line-ending conversion.
+*.joblib -text

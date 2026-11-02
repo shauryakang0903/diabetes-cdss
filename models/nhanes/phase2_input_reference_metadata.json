@@ -50,6 +50,7 @@
     "smoking_status"
   ],
   "disclaimer": "This indicator describes similarity to the model's development data. It is not a clinical confidence score and does not quantify the probability that the prediction is correct.",
+  "frozen_metadata_canonical_sha256": "cacd39ae02b71aa42ab1dc1133687a22c7e36bfcfabbbbefd17482674108cf79",
   "frozen_metadata_sha256": "57fa864c5e81d28120ab414f94b326d86977535a88c22e79f8ac474037be66d3",
   "frozen_model_sha256": "fa2254598fc24d8c93bbf9cfe597aece0e1137f227098e58efe38bcf302a8528",
   "method": {

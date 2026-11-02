@@ -10,7 +10,7 @@ from src.data.preprocessing import CORE_FEATURES
 from src.data.nhanes_model_preprocessing import NUMERIC_FEATURES, CATEGORICAL_FEATURES
 from src.models.nhanes_phase2_model import (
     DEFAULT_ARTIFACT_PATH, DEFAULT_METADATA_PATH, MODEL_VERSION,
-    load_metadata, sha256, validate_input_columns,
+    load_metadata, sha256, canonical_json_sha256, validate_input_columns,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -47,6 +47,7 @@ def generate_reference_metadata():
                   source_development_path=str(DEVELOPMENT_PATH), source_cohort_sha256=source_hash,
                   frozen_model_sha256=sha256(DEFAULT_ARTIFACT_PATH),
                   frozen_metadata_sha256=sha256(DEFAULT_METADATA_PATH), core_features=CORE_FEATURES,
+                  frozen_metadata_canonical_sha256=canonical_json_sha256(DEFAULT_METADATA_PATH),
                   numeric_statistics=numeric,
                   categorical_observed_values={f: sorted(data[f].dropna().unique().tolist())
                                                for f in CATEGORICAL_FEATURES},
@@ -83,13 +84,20 @@ def load_reference_metadata(path=REFERENCE_PATH, *, metadata_path=DEFAULT_METADA
                             artifact_path=DEFAULT_ARTIFACT_PATH):
     """Inference reads saved JSON and frozen provenance, never either cohort."""
     reference = json.loads(Path(path).read_text(encoding='utf-8'))
+    if not reference.get('frozen_metadata_canonical_sha256'):
+        raise ValueError('Input reference missing frozen_metadata_canonical_sha256. '
+                         'Update the committed phase2_input_reference_metadata.json from the verified '
+                         'frozen metadata; do not regenerate the predictive model or skip provenance checks.')
     metadata = load_metadata(metadata_path)
     if (reference.get('reference_version') != REFERENCE_VERSION
             or reference.get('model_version') != MODEL_VERSION
+            or reference.get('model_version') != metadata['model_version']
             or reference.get('core_features') != CORE_FEATURES
+            or reference.get('core_features') != metadata['core_features']
             or reference.get('source_cohort_sha256') != metadata['development_csv_sha256']
             or reference.get('frozen_model_sha256') != sha256(artifact_path)
-            or reference.get('frozen_metadata_sha256') != sha256(metadata_path)):
+            or reference.get('frozen_model_sha256') != metadata['artifact_sha256']
+            or reference['frozen_metadata_canonical_sha256'] != canonical_json_sha256(metadata_path)):
         raise ValueError('Input reference does not match the frozen model/development provenance')
     if set(reference['numeric_statistics']) != set(NUMERIC_FEATURES) or set(
             reference['categorical_observed_values']) != set(CATEGORICAL_FEATURES):

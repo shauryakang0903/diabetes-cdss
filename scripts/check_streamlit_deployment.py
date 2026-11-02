@@ -19,6 +19,8 @@ REQUIRED_FILES = (
 )
 EXPECTED_MODEL_SHA256 = 'fa2254598fc24d8c93bbf9cfe597aece0e1137f227098e58efe38bcf302a8528'
 EXPECTED_METADATA_SHA256 = '57fa864c5e81d28120ab414f94b326d86977535a88c22e79f8ac474037be66d3'
+# The byte hash above is historical provenance only; Git can normalize JSON text.
+EXPECTED_METADATA_CANONICAL_SHA256 = 'cacd39ae02b71aa42ab1dc1133687a22c7e36bfcfabbbbefd17482674108cf79'
 EXPECTED_LOWER_PROBABILITY = 0.005870712921023369
 RUNTIME_PACKAGES = ('streamlit', 'numpy', 'pandas', 'scikit-learn', 'xgboost',
                     'joblib', 'scipy', 'shap', 'matplotlib', 'pillow')
@@ -28,11 +30,14 @@ def check_deployment():
     missing = [name for name in REQUIRED_FILES if not (ROOT/name).is_file()]
     if missing:
         raise FileNotFoundError('Required deployment files missing: ' + ', '.join(missing))
-    from src.models.nhanes_phase2_model import sha256, runtime_package_version
+    from src.models.nhanes_phase2_model import sha256, canonical_json_sha256, runtime_package_version
     if sha256(ROOT/REQUIRED_FILES[3]) != EXPECTED_MODEL_SHA256:
         raise ValueError('Frozen model checksum mismatch; do not regenerate the model')
-    if sha256(ROOT/REQUIRED_FILES[4]) != EXPECTED_METADATA_SHA256:
+    if canonical_json_sha256(ROOT/REQUIRED_FILES[4]) != EXPECTED_METADATA_CANONICAL_SHA256:
         raise ValueError('Frozen metadata checksum mismatch; restore the verified original')
+    import xgboost
+    if xgboost.__version__ != runtime_package_version('xgboost'):
+        raise ValueError('Imported XGBoost module differs from its distribution version')
     from scripts.demo_nhanes_cdss import synthetic_profiles
     from src.decision_support.nhanes_diabetes_cdss import NhanesDiabetesCDSS
     # A public inference deployment must not need any cohort or research CSV.
@@ -51,7 +56,10 @@ def check_deployment():
         raise ValueError('Decision-support output integrity check failed')
     return dict(passed=True, python=platform.python_version(),
                 versions={name:runtime_package_version(name) for name in RUNTIME_PACKAGES},
-                model_sha256=EXPECTED_MODEL_SHA256, metadata_sha256=EXPECTED_METADATA_SHA256,
+                model_sha256=EXPECTED_MODEL_SHA256, metadata_sha256=sha256(ROOT/REQUIRED_FILES[4]),
+                metadata_canonical_sha256=EXPECTED_METADATA_CANONICAL_SHA256,
+                historical_metadata_sha256=EXPECTED_METADATA_SHA256,
+                xgboost_module_version=xgboost.__version__,
                 probability=probability, probability_percent=100*probability,
                 model_derived_stratum=result['model_derived_risk']['level'],
                 shap_integrity=True, recommendations=True, input_quality=True,

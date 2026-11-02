@@ -2,6 +2,8 @@
 
 An academic Streamlit prototype for **physician-diagnosed diabetes classification**, using a frozen NHANES XGBoost model. It does not predict future incident diabetes.
 
+**Deploy with Python 3.13. The frozen joblib artifact was created and verified under Python 3.13.4. Python 3.14 compatibility is not established.** If an existing app runs Python 3.14, changing code or rebooting does not change its interpreter: record its settings, then delete/recreate the Community Cloud app and explicitly select Python 3.13 in Advanced settings.
+
 ## What the app does
 
 - Accepts the fixed Core-10 inputs: age, sex, race/ethnicity, BMI, waist circumference, mean systolic/diastolic blood pressure, HDL, total cholesterol and smoking status.
@@ -77,5 +79,9 @@ fa2254598fc24d8c93bbf9cfe597aece0e1137f227098e58efe38bcf302a8528
 ```
 
 The original metadata and input-reference JSON contain historical Windows provenance strings. They are preserved to retain their checksums; runtime paths are resolved from the source location and never use those recorded machine paths. Only load the trusted project artifact: a checksum verifies integrity, not the safety of arbitrary pickle files.
+
+Metadata provenance uses canonical parsed-JSON SHA-256 so Git's CRLF/LF conversion, indentation and key ordering do not invalidate unchanged content. The binary model SHA-256 remains exact. The input-reference JSON includes frozen_metadata_canonical_sha256 and retains the old byte hash for history; deploy the code and updated reference together. An old reference without that field fails with an explicit migration message.
+
+Canonical-provenance fix verification: **46 focused tests and the full 241-test suite passed**. The Python 3.13.4 CPU-only backend also initialized with LF-formatted metadata and preserved the lower synthetic prediction, SHAP, recommendations and input-quality output. Python 3.14 remains unverified.
 
 Research workflows require separate requirements files and local data. They are not executed during app startup. Do not regenerate the frozen model to fix a deployment error.
